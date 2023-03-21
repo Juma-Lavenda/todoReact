@@ -79,7 +79,7 @@ export default function Main(){
                         </div>
                         <div className = "filter">
                                 <h3> Filter deadline:</h3>
-                                <input id="search" type = "date" onBlur = {filterTable} />
+                                <input id="search" type = "date" onChange = {filterTable} />
                         </div>
                         
                         <Table data={data} handleRemoveItem = {handleRemoveItem} />
