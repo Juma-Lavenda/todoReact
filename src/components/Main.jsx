@@ -24,8 +24,9 @@ export default function Main(){
          * Filter the table according to user deadline input
          * Modifies data so currently losing prev user input
          */
-        const filterTable = () =>{
-                const value = document.querySelector(".filter").querySelector('input').value
+        const filterTable = (date) =>{
+                const value = date.value
+//                       document.querySelector(".filter").querySelector('input').value
                 {value && setData(data.filter(a => a.Deadline === value.toString()));}
         }
 
@@ -79,7 +80,7 @@ export default function Main(){
                         </div>
                         <div className = "filter">
                                 <h3> Filter deadline:</h3>
-                                <input id="search" type = "date" onChange = {filterTable} />
+                                <input id="search" type = "date" onChange = {() => filterTable(this} />
                         </div>
                         
                         <Table data={data} handleRemoveItem = {handleRemoveItem} />
